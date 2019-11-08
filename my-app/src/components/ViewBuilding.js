@@ -1,22 +1,30 @@
 import React from 'react';
+import RemoveBuilding from './RemoveBuilding';
 
 class ViewBuilding extends React.Component {
 
 	render() {
-		const {data, selectedBuilding} = this.props
+		const {data, selectedBuilding, removeBuilding} = this.props
+
 		const viewBuilding = data
 			.filter(directory => 
 				directory.id === selectedBuilding)
 			.map(directory => {
-				if (!directory.coordinates) directory.coordinates = {latitude: '', longitude: ''}
+				if (!directory.coordinates) 
+					directory.coordinates = {latitude: '', longitude: ''}
 				return (
-					<tr key={directory.id}>
-						<info>Code: {' '}{directory.code} </info>
-						<info>Name: {' '}{directory.name} </info>
-						<info>Address: {' '}{directory.address} </info>
-						<info>Latitude: {' '}{directory.coordinates.latitude} </info>
-						<info>Longitude: {' '}{directory.coordinates.longitude}</info>
-					</tr>
+					<div>
+						<tr key={directory.id}>
+							<info> {directory.name} </info>
+							<p> Code: {' '}{directory.code} </p>
+							<p> Address: {' '}{directory.address} </p>
+							<p> Latitude: {' '}{directory.coordinates.latitude} </p>
+							<p> Longitude: {' '}{directory.coordinates.longitude}</p>
+						</tr>
+						<RemoveBuilding 
+              				removeBuilding = {removeBuilding}
+            			/>
+            		</div>
 				);
 			});
 
@@ -24,7 +32,8 @@ class ViewBuilding extends React.Component {
 			<div>
 				<p>
 					{' '}
-					<i>Click on a name to view more information</i>
+					<h2><i>Click on a name to view more information</i></h2>
+					<p></p>
 					{viewBuilding}
 				</p>
 			</div>
