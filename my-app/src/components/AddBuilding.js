@@ -12,18 +12,6 @@ class AddBuilding extends React.Component{
         	lon: ''
         };
     }
-
-
-    // newBuilding() {
-
-    //     code = this.code.value
-    //     name = this.name.value
-    //     addr = this.addr.value
-    //     lat = this.lat.value
-    //     lon = this.lon.value
-        
-    //     this.props.newBuilding(newCode, newName, newLat, newLon, newAddr)
-    // }
     
     addBuilding() {
     	//console.log(this.code.value)
@@ -54,8 +42,6 @@ class AddBuilding extends React.Component{
         	</div>
         );
     }
-
-
 
 }
 

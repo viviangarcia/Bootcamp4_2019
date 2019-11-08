@@ -21,9 +21,7 @@ class ViewBuilding extends React.Component {
 							<p> Latitude: {' '}{directory.coordinates.latitude} </p>
 							<p> Longitude: {' '}{directory.coordinates.longitude}</p>
 						</tr>
-						<RemoveBuilding 
-              				removeBuilding = {removeBuilding}
-            			/>
+						<RemoveBuilding removeBuilding = {removeBuilding}/>
             		</div>
 				);
 			});
